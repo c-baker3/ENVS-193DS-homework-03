@@ -1,17 +1,16 @@
-# ENVS-193DS-homework-03
+# ENVS-193DS-Homework-03
 # Spring 2026
 
 ## General information
 
-- info about what the repo is for (what analyses, etc)
-- who is contributing to repo and where it came from if it's a work
+This repo was created to track progress on Callie Baker's ENVS193-DS assignment titled "Homework 3". 
 
 ## Data and file information
 
-- describe the files corresponding to data
-- describe the files corresponding to code
-- (optional but nice) provide a tree diagram
+The `code` folder includes all code used for the assignment. 
+
+The `data` folder includes all data files for used for the assignment.
 
 ## Rendered output
 
-- link to any rendered pdf from a qmd
+The rendered output for Homework 3 is [here](https://github.com/c-baker3/ENVS-193DS-homework-03/blob/main/homework-03.pdf).
