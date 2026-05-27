@@ -144,7 +144,7 @@ Both tests led to the same decision which is to reject the null hypothesis becau
 **Figure 1**:
 ```{r}
 #| label: my-data-categorical-visualization
-# created boxplot with jitter to visualize workout duration vs workout type
+# boxplot with jitter to visualize workout duration vs workout type
 
 # cleaned column names
 my_data <- my_data |> 
@@ -172,10 +172,11 @@ ggplot(data = my_data,
                                 "Yoga" = "darkred")) +
   # relabeled x- and y-axes
   # added title summarizing takeaway
+  # added subtitle with recent date
   labs(title = "Runs show the most variable workout duration",
        x = "Workout type",
        y = "Workout duration (minutes)",
-       subtitle = "2026-05-26") +
+       subtitle = "Most recent observation: 2026-05-26") +
   # changed ggplot theme from default
   theme_minimal() +
   # removed legend
@@ -185,32 +186,44 @@ ggplot(data = my_data,
 **Figure 2**:
 ```{r}
 #| label: my-data-continuous-visualization
-# created scatter plot to visualize workout duration (minutes) vs 
-# sleep the previous night (hours)
+# boxplot with jitter: workout type vs sleep the previous night (hours)
 
-# base layer: ggplot with x- and y-axes
+# base layer: ggplot with x- and y- axes
 # data frame: my_data
 ggplot(data = my_data,
-       # x-axis: sleep (hours) the night prior (continuous predictor
-       # variable)
-       # y-axis: workout duration (response variable)
-       mapping = aes(x = sleep_hours,
-                     y = duration_min)) +
-  # first layer: points for each observation
-  geom_point(size = 2) + # increased point size
+       mapping = aes(x = workout_type,
+                     y = sleep_hours,
+                     color = workout_type)) +
+  # first layer: boxplot to show distribution
+  geom_boxplot() +
+  # second layer: jitter to show underlying data
+  geom_jitter(height = 0, # no jitter in vertical direction
+              width = 0.2, # narrowed jitter in horizontal direction
+              alpha = 0.5, # made points more transparent
+              shape = 1) + # changed points to be open circles
+  # changed colors from default
+  scale_color_manual(values = c("Lift" = "darkgreen",
+                                "Run"  = "navyblue",
+                                "Yoga" = "darkred",
+                                "Surf" = "darkorange")) +
   # relabeled x- and y-axes
   # added title summarizing main message
-  labs(title = "More sleep may be associated with longer workouts",
-       x = "Sleep the previous night (hours)",
-       y = "Workout duration (minutes)") +
+  # added subtitle with recent date
+  labs(title = "More sleep is associated with going on runs",
+       x = "Workout type",
+       y = "Sleep the previous night (hours)",
+       subtitle = "Most recent observation: 2026-05-26") +
   # changed ggplot theme from default
-  theme_minimal() 
+  theme_minimal() +
+  # removed legend
+  theme(legend.position = "none")
 ```
 
 ## b. Captions
 
-From the boxplot with overlayed jitter (problem 3a), I observed that my run workouts show the greatest variability in duration indicated by the wider spread of points and the taller box. Of the three groups, run workouts have the smallest median duration, while lift workouts have the largest median duration. Yoga workouts shows the most consistency with points clustered closely together at 60 minutes and no vertical box. In the continuous scatter plot showing workout duration vs sleep in hours (problem 3b), there does not appear to be a strong relationship between variables, seen through the varied points. Collecting more data could shift the medians and spreads in the boxplots, and a larger sample size may reveal a clearer relationship between continuous variables in the scatter plot. 
+**Figure 1. Runs show the most variable workout duration.** Points represent individual workout sessions (n = 30, most recent observation: 2026-05-26). Color represents each workout type (green: lift, blue: run, grey: surf, red: yoga). Boxes show the median and interquartile range of workout duration (minutes) for each workout type (lift, run, surf, yoga). Note that surf sessions (n = 2) are limited in sample size.
 
+**Figure 2. More sleep is associated with going on runs.** Points represent individual workout sessions (n = 30, most recent observation: 2026-05-26). Color represents each workout type (green: lift, blue: run, grey: surf, red: yoga). Boxes show the median and interquartile range of sleep the previous night (hours) for each workout type (lift, run, surf, yoga). Note that surf sessions (n = 2) are limited in sample size.
 
 # Problem 3. Affective visualization
 
