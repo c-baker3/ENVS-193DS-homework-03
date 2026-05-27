@@ -37,10 +37,30 @@ my_data <- read_csv(here("data", "envs193ds-personal-data.csv"))
 # Problem 1. Giant kelp fronds
 
 ## a. 
-To determine the strength of the relationship between temperature and giant kelp frond elongation rate, I can run tests for the correlation between the two variables. I can calculate Pearson's correlation (r) or for Spearman rank correlation (ϱ). Pearson's correlation is used when variables are continuous and normally distributed; Pearson's r represents the linear relationship between two variables and is used for parametric studies. To contrast, Spearman rank correlation is the non parametric version which describes monotonic relationship between variables. 
+To determine the strength of the relationship between temperature and giant kelp frond elongation rate, I can run tests for the correlation between the two variables. I can calculate Pearson's correlation (r) or for Spearman rank correlation ($\rho$). Pearson's correlation is used when variables are continuous and normally distributed; Pearson's r represents the linear relationship between two variables and is used for parametric studies. To contrast, Spearman rank correlation is the non parametric version which describes monotonic relationship between variables. 
 
 ## b.
+```{r}
+#| label: visualization
 
+# base layer: kelp data
+ggplot(data = kelp,
+       # x-axis: temperature
+       # y-axis: elongation rate
+       mapping = aes(x = temp_c,
+                     y = kelp_elong)) +
+  # first layer: points to represent individual kelp observations
+  # changed point color to dark green 
+  geom_point(color = "darkgreen") + 
+  # relabeled x- and y-axes
+  # added title
+  labs(x = "Ocean Temperature (ºC)", 
+       y = "Kelp Elongation Rate (cm/day)",
+       title = "Kelp Grows Faster at Cooler Ocean Temperatures") +
+  # changed theme from default
+  theme_minimal()
+
+```
 
 ## c. 
 
