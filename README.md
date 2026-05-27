@@ -3,7 +3,7 @@
 
 ## General information
 
-This repo was created to track progress on Callie Baker's ENVS193-DS assignment titled "Homework 3". 
+This repo was created to track progress on Callie Baker's ENVS-193-DS assignment titled "Homework 3". 
 
 ## Data and file information
 
