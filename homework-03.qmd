@@ -2,13 +2,15 @@
 title: "Homework-03"
 author: "Callie Baker"
 date: "2026-05-28"
-format: pdf
+format:
+  pdf:
+    toc: true # use this to display a table of contents
 execute:
-  message: false
-  warning: false
+  message: false # use this to make sure messages don't show up
+  warning: false # use this to make sure warnings don't show upl
 ---
 
-# 1. Set up
+# Set up
 
 ## Packages
 
@@ -35,7 +37,21 @@ my_data <- read_csv(here("data", "envs193ds-personal-data.csv"))
 # Problem 1. Giant kelp fronds
 
 ## a. 
+To determine the strength of the relationship between temperature and giant kelp frond elongation rate, I can run tests for the correlation between the two variables. I can calculate Pearson's correlation (r) or for Spearman rank correlation (ϱ). Pearson's correlation is used when variables are continuous and normally distributed; Pearson's r represents the linear relationship between two variables and is used for parametric studies. To contrast, Spearman rank correlation is the non parametric version which describes monotonic relationship between variables. 
 
+## b.
+
+
+## c. 
+
+
+## d.
+
+
+# e. 
+
+
+## f. 
 
 # Problem 2. Personal data
 
