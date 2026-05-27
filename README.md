@@ -13,4 +13,4 @@ The `data` folder includes all data files for used for the assignment.
 
 ## Rendered output
 
-The rendered output for Homework 3 is [here](https://github.com/c-baker3/ENVS-193DS-homework-03/blob/main/homework-03.pdf).
+The rendered output for Homework 3 is [here](https://github.com/c-baker3/ENVS-193DS-homework-03/blob/main/code/homework-03.pdf).
