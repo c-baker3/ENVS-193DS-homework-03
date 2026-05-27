@@ -118,7 +118,7 @@ cor.test(kelp$temp_c, kelp$kelp_elong,
 ```
 
 ## d. Results communication
-
+To evaluate the strength of the relationship between temperature and giant kelp frond elongation rate, I used a Pearson's correlation test. I found a strong negative relationship between ocean temperature (ºC) and giant kelp elongation rate (cm/day) (Pearson’s r = -0.69, t(30) = -5.19, p < 0.001, ⍺ = 0.05). 
 
 ## e. Test implications
 
