@@ -12,8 +12,6 @@ execute:
 
 # Set up
 
-## Packages
-
 ```{r}
 #| label: packages and data
 
@@ -33,6 +31,7 @@ kelp <- read_csv(here("data", "temp-kelp.csv"))
 my_data <- read_csv(here("data", "envs193ds-personal-data.csv"))
 ```
 
+
 # Problem 1. Giant kelp fronds
 
 ## a. An appropriate test
@@ -41,15 +40,9 @@ To determine the strength of the relationship between temperature and giant kelp
 ## b. Create a visualization
 
 ```{r}
-#| label: looking-at-data
+#| label: scatterplot
 
-# looking at data
-kelp |> slice_sample(n = 5)
-```
-
-```{r}
-#| label: visualization
-
+# scatterplot for temperature vs kelp growth rate
 # base layer: kelp data
 ggplot(data = kelp,
        # x-axis: temperature
@@ -72,50 +65,76 @@ ggplot(data = kelp,
 ```
 **Note**: There appears to be a negatively linear relationship between kelp growth and ocean temperature. In other words, kelp growth rate decreases at increased ocean water temperatures. 
 
-
 ## c. Check your assumptions and run your test
 
 ### Assumption checks
 
-**Check 1**: There are independent observations and the data is continuous.  
+**Check 1**: The data includes independent observations, and both variables are continuous.  
 
-**Check 2**: Assessing for normality in residuals and ??. 
+**Check 2**: Linearity was assessed in Question 1b. There appears to be a negative linear relationship between kelp growth and ocean temperature seen through the created scatterplot.    
+
+**Check 3**: Normality was assessed using two QQ plots, one for each variable. 
 ```{r}
-#| label: kelp-model
-#| fig-height: 6
-#| fig-width: 8
+#| label: temperature-QQ-plot
 
-# model: linear model
-kelp_model <- lm(
-  kelp_elong ~ temp_c, # formula: response ~ predictor
-  data = kelp) # data frame: kelp
-
-# displayed plots in 2x2 grid
-par(mfrow = c(2,2))
-# generated diagnostic plots
-plot(kelp_model)
+# base layer: ggplot
+# data frame: kelp
+ggplot(data = kelp,
+       # y-axis: temperature
+       aes(sample = temp_c)) +
+  # first layer: reference line colored red
+  geom_qq_line(color = "red") +
+  # second layer: QQ plot
+  geom_qq()
 ```
+**Note**: The data for ocean temperature appears to be normally distributed. 
 
-
-USE THIS?
 ```{r}
+#| label: elongation-QQ-plot
 
-summary(kelp)
-
-lm(temp_c ~ kelp_elong, data = kelp)
+# base layer: ggplot
+# data frame: kelp
+ggplot(data = kelp,
+       # y-axis: kelp elongation
+       aes(sample = kelp_elong)) +
+  # first layer: reference line colored red
+  geom_qq_line(color = "red") +
+  # second layer: QQ plot
+  geom_qq()
 ```
+**Note**: The data for kelp elongation appears to be normally distributed. 
 
+**Summary of assumption checks**: The data includes independent observations, and both variables are continuous. Linearity was assessed by looking at the scatterplot created in 1b and was met. Normality was assessed using Q-Q plots; both variables appear normally distributed as the data aligns closely with the red reference line. Finally, no significant outliers were detected from the scatterplot. Therefore, all assumptions for Pearson's correlation were met.
 
-### Running the test (NAME IT)
+### Running the test
 
+```{r}
+#| label: Pearson's-test
+
+# ran Pearson's test for correlation
+# variables: ocean temperature and kelp elongation rate
+cor.test(kelp$temp_c, kelp$kelp_elong, 
+         method = "pearson") # Pearson's r
+```
 
 ## d. Results communication
 
 
-# e. Test implications
+## e. Test implications
 
 
 ## f. Double check your work 
+
+```{r}
+#| label: Spearmen's-test
+
+# ran Spearmen's test for correlation
+# variables: ocean temperature and kelp elongation rate
+cor.test(kelp$temp_c, kelp$kelp_elong, 
+         method = "spearman", # Spearman's rank
+         exact = FALSE)
+```
+
 
 
 # Problem 2. Personal data
