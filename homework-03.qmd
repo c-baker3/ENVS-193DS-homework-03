@@ -1,5 +1,5 @@
 ---
-title: "homework-03"
+title: "Homework-03"
 author: "Callie Baker"
 date: "2026-05-28"
 format: pdf
@@ -32,7 +32,86 @@ my_data <- read_csv(here("data", "envs193ds-personal-data.csv"))
 
 ```
 
-# Problem 1. 
+# Problem 1. Giant kelp fronds
+
+## a. 
+
+
+# Problem 2. Personal data
+
+## a. 
+
+Figure 1. 
+```{r}
+#| label: my-data-categorical-visualization
+# creating boxplot with jitter to visualize workout duration vs workout type
+
+# cleaned column names
+my_data <- my_data |> 
+  clean_names()
+
+# base layer: ggplot with x- and y-axes
+# data frame: my_data
+ggplot(data = my_data,
+       # x-axis: workout type (categorical predictor variable)
+       # y-axis: workout duration (response variable)
+       mapping = aes(x = workout_type,
+                     y = duration_min,
+                     # colored points by workout type
+                     color = workout_type)) +
+  # first layer: boxplot to show distribution
+  geom_boxplot() +
+  # second layer: jitter to show underlying data
+  geom_jitter(height = 0, # no jitter in vertical direction
+              width = 0.2, # narrowed jitter in horizontal direction
+              alpha = 0.5, # made points more transparent
+              shape = 1) + # changed points to be open circles
+  # changed colors from default
+  scale_color_manual(values = c("Lift" = "darkgreen",
+                                "Run"  = "navyblue",
+                                "Yoga" = "darkred")) +
+  # relabeled x- and y-axes
+  # added title summarizing takeaway
+  labs(title = "Runs show the most variable workout duration",
+       x = "Workout type",
+       y = "Workout duration (minutes)",
+       subtitle = "2026-05-26") +
+  # changed ggplot theme from default
+  theme_minimal() +
+  # removed legend
+  theme(legend.position = "none")
+```
+
+Figure 2. NEED TO UPDATE
+```{r}
+#| label: my-data-continuous-visualization
+# creating scatter plot to visualize workout duration (minutes) vs 
+# sleep the previous night (hours)
+
+# base layer: ggplot with x- and y-axes
+# data frame: my_data
+ggplot(data = my_data,
+       # x-axis: sleep (hours) the night prior (continuous predictor
+       # variable)
+       # y-axis: workout duration (response variable)
+       mapping = aes(x = sleep_hours,
+                     y = duration_min)) +
+  # first layer: points for each observation
+  geom_point(size = 2) + # increased point size
+  # relabeled x- and y-axes
+  # added title summarizing main message
+  labs(title = "More sleep may be associated with longer workouts",
+       x = "Sleep the previous night (hours)",
+       y = "Workout duration (minutes)") +
+  # changed ggplot theme from default
+  theme_minimal() 
+```
+
+## b. 
+
+Captions 
+
+From the boxplot with overlayed jitter (problem 3a), I observed that my run workouts show the greatest variability in duration indicated by the wider spread of points and the taller box. Of the three groups, run workouts have the smallest median duration, while lift workouts have the largest median duration. Yoga workouts shows the most consistency with points clustered closely together at 60 minutes and no vertical box. In the continuous scatter plot showing workout duration vs sleep in hours (problem 3b), there does not appear to be a strong relationship between variables, seen through the varied points. Collecting more data could shift the medians and spreads in the boxplots, and a larger sample size may reveal a clearer relationship between continuous variables in the scatter plot. 
 
 ---
 
