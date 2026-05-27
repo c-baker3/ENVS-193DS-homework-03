@@ -1,0 +1,27 @@
+---
+title: "homework-03"
+author: "Callie Baker"
+date: "2026-05-28"
+format: pdf
+execute:
+  message: false
+  warning: false
+---
+
+# 1. Set up
+
+## Packages
+
+```{r}
+#| label: packages
+
+# loaded in packages 
+library(tidyverse)
+library(rstatix)
+library(here)
+library(readxl)
+```
+
+
+---
+

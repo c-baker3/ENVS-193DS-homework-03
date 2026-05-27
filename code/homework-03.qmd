@@ -1,0 +1,16 @@
+---
+title: "homework-03"
+author: "Callie Baker"
+date: "2026-05-28"
+format: pdf
+execute:
+  message: false
+  warning: false
+---
+
+# 1. Set up
+
+## Packages
+
+---
+
