@@ -225,6 +225,7 @@ ggplot(data = my_data,
 
 **Figure 2. More sleep is associated with going on runs.** Points represent individual workout sessions (n = 30, most recent observation: 2026-05-26). Color represents each workout type (green: lift, blue: run, grey: surf, red: yoga). Boxes show the median and interquartile range of sleep the previous night (hours) for each workout type (lift, run, surf, yoga). Note that surf sessions (n = 2) are limited in sample size.
 
+
 # Problem 3. Affective visualization
 
 ## a. Describe your affective visualization
