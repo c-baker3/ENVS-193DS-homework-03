@@ -13,15 +13,26 @@ execute:
 ## Packages
 
 ```{r}
-#| label: packages
+#| label: packages and data
 
-# loaded in packages 
-library(tidyverse)
-library(rstatix)
-library(here)
-library(readxl)
+# read in packages
+library(tidyverse) # general use
+library(here) # file organization
+library(janitor) # cleaning data frames
+library(readxl) # reading excel files
+library(scales) # modifying axis labels
+library(ggeffects) # getting model predictions
+library(ggplot2)
+library(MuMIn) # model selection
+library(dplyr)
+
+# reading in data
+kelp <- read_csv(here("data", "temp-kelp.csv"))
+my_data <- read_csv(here("data", "envs193ds-personal-data.csv"))
+
 ```
 
+# Problem 1. 
 
 ---
 
