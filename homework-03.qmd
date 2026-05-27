@@ -35,7 +35,7 @@ my_data <- read_csv(here("data", "envs193ds-personal-data.csv"))
 # Problem 1. Giant kelp fronds
 
 ## a. An appropriate test
-To determine the strength of the relationship between temperature and giant kelp frond elongation rate, I can test for the correlation between the two continuous variables using Pearson's correlation (r) or Spearman rank correlation ($\rho$). Pearson's correlation is used when variables are continuous and normally distributed; Pearson's r represents the linear relationship between two variables and is used for parametric studies. In contrast, Spearman rank correlation is the non parametric version which describes monotonic relationship between variables. 
+To determine the strength of the relationship between temperature and giant kelp frond elongation rate, I can test for the correlation between the two continuous variables using Pearson's correlation (r) or Spearman rank ($\rho$). Pearson's correlation is used when variables are continuous and normally distributed; Pearson's r represents the linear relationship between two variables and is used for parametric studies. In contrast, Spearman rank correlation is the non parametric version which describes monotonic relationship between variables. 
 
 ## b. Create a visualization
 
@@ -118,23 +118,23 @@ cor.test(kelp$temp_c, kelp$kelp_elong,
 ```
 
 ## d. Results communication
-To evaluate the strength of the relationship between temperature and giant kelp frond elongation rate, I used a Pearson's correlation test. I found a strong negative relationship between ocean temperature (ºC) and giant kelp elongation rate (cm/day) (Pearson’s r = -0.69, t(30) = -5.19, p < 0.001, ⍺ = 0.05). 
+To evaluate the strength of the relationship between temperature and giant kelp frond elongation rate, I used a Pearson's correlation test. I found a strong negative linear relationship between ocean temperature (ºC) and giant kelp elongation rate (cm/day) (Pearson’s r = -0.69, t(30) = -5.19, p < 0.001, ⍺ = 0.05). Therefore, the null hypothesis should be rejected because there is a strong relationship between ocean water temperature and giant kelp frond elongation rate. 
 
 ## e. Test implications
 The results outlined above indicate that giant kelp frond growth rate decreases with increased ocean water temperatures. Therefore, warming ocean temperatures from climate change could threaten giant kelp productivity and species that rely on healtyh giant kelp ecosystems. 
 
 ## f. Double check your work 
-
 ```{r}
-#| label: Spearmen's-test
+#| label: Spearman-test
 
-# ran Spearmen's test for correlation
+# ran Spearman rank test for correlation
 # variables: ocean temperature and kelp elongation rate
 cor.test(kelp$temp_c, kelp$kelp_elong, 
-         method = "spearman", # Spearman's rank
+         method = "spearman", # Spearman rank
          exact = FALSE)
 ```
 
+Both tests led to the same decision which is to reject the null hypothesis because there is a strong negative correlation between ocean temperature and giant kelp frond growth rate. Using the Spearman rank test, I found a strong negative monotonic relationship between ocean temperature (ºC) and giant kelp elongation rate (cm/day) (Spearman ($\rho$) = -0.69, S = 9216.1, p < 0.001, ⍺ = 0.05). Both tests produced correlation coefficients of -0.69 and p-values of less than 0.001, suggesting that warmer temperatures tend to produce lower kelp growth rates. 
 
 
 # Problem 2. Personal data
