@@ -258,8 +258,8 @@ The statistical tests the authors use are three-factor ANOVAs with equal replica
 #| label: insert-anova-photo
 #| echo: false
 
-knitr::include_graphics("anova.test.png")
-knitr::include_graphics("anova.test.2.png")
+knitr::include_graphics(here("anova.pics", "anova.test.png"))
+knitr::include_graphics(here("anova.pics", "anova.test.2.png"))
 ```
 
 ## b. Visual clarity
@@ -269,7 +269,7 @@ Table 1 presents the ANOVA results organized by species and divided into respons
 Table 1 table has a high data to ink ratio because the authors present dense statistical information in a compact grid without colors or borders. Nonetheless, I find the Table difficult to follow due to the sheer amount of information it provides. Furthermore, significant p-values are not visually distinguished with asterisks or text modifications, making it harder for viewers to see key results.
 
 ## d. Recommendations
-**Recommendations**:
+**Recommended modifications**:
 To improve Table 1, I recommend adding asterisks for p-values less than 0.05 (the significance level) to improve readability of important takeaways. I would also recommend adding an effect size column such as eta-squared to indicate the strength of the relationship between variables. 
 
 **Additional figure**: 
