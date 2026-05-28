@@ -11,7 +11,7 @@ The `code` folder includes all code used for the assignment.
 
 The `data` folder includes all data files used for the assignment.
 
-The `anova.pics` folder includes all image files used for the assignment. 
+The `images` folder includes all image files used for the assignment. 
 
 ## Rendered output
 
