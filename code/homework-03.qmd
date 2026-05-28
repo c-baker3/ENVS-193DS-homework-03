@@ -242,6 +242,13 @@ knitr::include_graphics(here("images", "sketch.idea.jpeg"))
 ```
 
 ## c. Make a draft of your visualization
+**Note**: This draft was also hand drawn on my iPad. I am still deciding whether I want to draw my visualization out on paper for my final copy. 
+```{r}
+#| label: insert-draft-photo
+#| echo: false
+
+knitr::include_graphics(here("images", "draft.jpg"))
+```
 
 
 ## d. Write an artist statement
