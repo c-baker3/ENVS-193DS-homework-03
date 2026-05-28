@@ -3,13 +3,15 @@
 
 ## General information
 
-This repo was created to track progress on Callie Baker's ENVS-193-DS assignment titled "Homework 3". 
+This repo was created to track progress on Callie Baker's ENVS-193-DS assignment: Homework 3. 
 
 ## Data and file information
 
 The `code` folder includes all code used for the assignment. 
 
-The `data` folder includes all data files for used for the assignment.
+The `data` folder includes all data files used for the assignment.
+
+The `anova.pics` filder includes all image files used for the assignment. 
 
 ## Rendered output
 
