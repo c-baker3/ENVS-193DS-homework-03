@@ -233,6 +233,11 @@ ggplot(data = my_data,
 
 
 ## b. Create a paper sketch of your idea
+```{r}
+#| label: insert-sketch-photo
+#| echo: false
+
+```
 
 
 ## c. Make a draft of your visualization
@@ -247,15 +252,28 @@ ggplot(data = my_data,
 # Problem 4. Statistical critique
 
 ## a. Revist and summarize
+The statistical tests the authors use are three-factor ANOVAs with equal replication to test the effects of temperature, food quantity, and food quality on abalone growth (shell length and body mass), reproductive output (gonad bulk index), disease burden (WS-RLP score), and mortality. Each response variable is tested separately, and the ANOVA also tests all two-way and three-way interactions among the three predictors. Additionally, the authors apply multivariate analyses (cluster analysis and multidimensional scaling based on Euclidean distances) to examine how the 27 treatment combinations group together across all response variables simultaneously.
 
+```{r}
+#| label: insert-anova-photo
+#| echo: false
+
+knitr::include_graphics("anova.test.png")
+knitr::include_graphics("anova.test.2.png")
+```
 
 ## b. Visual clarity
-
+Table 1 presents the ANOVA results organized by species and divided into response variable columns for growth, reproduction, disease, and mortality. Although Table 1 allows for clear comparison of how each predictor affects each outcome across species, it includes so many information that it had to be extended into two tables. Furthermore, the table only reports MS, F, and p-values with no indication of the direction or magnitude of effects, so viewers cannot assess whether warm temperature increased or decreased growth.
 
 ## c. Aesthetic clarity
-
+Table 1 table has a high data to ink ratio because the authors present dense statistical information in a compact grid without colors or borders. Nonetheless, I find the Table difficult to follow due to the sheer amount of information it provides. Furthermore, significant p-values are not visually distinguished with asterisks or text modifications, making it harder for viewers to see key results.
 
 ## d. Recommendations
+**Recommendations**:
+To improve Table 1, I recommend adding asterisks for p-values less than 0.05 (the significance level) to improve readability of important takeaways. I would also recommend adding an effect size column such as eta-squared to indicate the strength of the relationship between variables. 
+
+**Additional figure**: 
+I recommend a bar chart displaying mean growth (specifying either mass or length) on the y-axis and temperature treatment (cool, ambient, warm) on the x-axis; bars would be grouped and colored by species (example: red for H. rufescens, green for H. fulgens). This figure would allow for direct species comparison across temperature levels and would convey the direction and magnitude of the effect of temperature on abalone growth.  
 
 ---
 
