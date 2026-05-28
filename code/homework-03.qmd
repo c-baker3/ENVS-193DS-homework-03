@@ -26,7 +26,7 @@ library(ggplot2)
 library(MuMIn) # model selection
 library(dplyr)
 
-# reading in data
+# read in data
 kelp <- read_csv(here("data", "temp-kelp.csv"))
 my_data <- read_csv(here("data", "envs193ds-personal-data.csv"))
 ```
@@ -237,6 +237,7 @@ ggplot(data = my_data,
 #| label: insert-sketch-photo
 #| echo: false
 
+# knitr::include_graphics(here("images", "sketch.idea.png"))
 ```
 
 
@@ -247,6 +248,7 @@ ggplot(data = my_data,
 
 
 ## e. Prep your materials to share in class
+[View](https://docs.google.com/presentation/d/1Hp80ZdV6cwIbl-D7HRz6ZWOA7Yjt5NrxB7XCIwtxzso/edit?usp=sharing) my slides. 
 
 
 # Problem 4. Statistical critique
@@ -258,15 +260,15 @@ The statistical tests the authors use are three-factor ANOVAs with equal replica
 #| label: insert-anova-photo
 #| echo: false
 
-knitr::include_graphics(here("anova.pics", "anova.test.png"))
-knitr::include_graphics(here("anova.pics", "anova.test.2.png"))
+knitr::include_graphics(here("images", "anova.test.png"))
+knitr::include_graphics(here("images", "anova.test.2.png"))
 ```
 
 ## b. Visual clarity
 Table 1 presents the ANOVA results organized by species and divided into response variable columns for growth, reproduction, disease, and mortality. Although Table 1 allows for clear comparison of how each predictor affects each outcome across species, it includes so many information that it had to be extended into two tables. Furthermore, the table only reports MS, F, and p-values with no indication of the direction or magnitude of effects, so viewers cannot assess whether warm temperature increased or decreased growth.
 
 ## c. Aesthetic clarity
-Table 1 table has a high data to ink ratio because the authors present dense statistical information in a compact grid without colors or borders. Nonetheless, I find the Table difficult to follow due to the sheer amount of information it provides. Furthermore, significant p-values are not visually distinguished with asterisks or text modifications, making it harder for viewers to see key results.
+Table 1 table has a high data to ink ratio because the authors present dense statistical information in a compact grid without colors or borders. Nonetheless, I find the table difficult to follow due to the large amount of information it presents. Furthermore, significant p-values are not visually distinguished with asterisks or text modifications, making it harder for viewers to see important results.
 
 ## d. Recommendations
 **Recommended modifications**:
