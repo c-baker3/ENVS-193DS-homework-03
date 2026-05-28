@@ -19,12 +19,6 @@ execute:
 library(tidyverse) # general use
 library(here) # file organization
 library(janitor) # cleaning data frames
-library(readxl) # reading excel files
-library(scales) # modifying axis labels
-library(ggeffects) # getting model predictions
-library(ggplot2)
-library(MuMIn) # model selection
-library(dplyr)
 
 # read in data
 kelp <- read_csv(here("data", "temp-kelp.csv"))
@@ -35,7 +29,7 @@ my_data <- read_csv(here("data", "envs193ds-personal-data.csv"))
 # Problem 1. Giant kelp fronds
 
 ## a. An appropriate test
-To determine the strength of the relationship between temperature and giant kelp frond elongation rate, I can test for the correlation between the two continuous variables using Pearson's correlation (r) or Spearman rank ($\rho$). Pearson's correlation is used when variables are continuous and normally distributed; Pearson's r represents the linear relationship between two variables and is used for parametric studies. In contrast, Spearman rank correlation is the non parametric version which describes monotonic relationship between variables. 
+To determine the strength of the relationship between temperature and giant kelp frond elongation rate, I can test for the correlation between the two continuous variables using Pearson's correlation (r) or Spearman rank correlation ($\rho$). Pearson's correlation is used when variables are continuous and normally distributed; Pearson's r represents the linear relationship between two variables and is used for parametric studies. In contrast, Spearman rank correlation is the non parametric version which describes monotonic relationship between variables. 
 
 ## b. Create a visualization
 
@@ -104,7 +98,7 @@ ggplot(data = kelp,
 ```
 **Note**: The data for kelp elongation appears to be normally distributed. 
 
-**Summary of assumption checks**: The data includes independent observations, and both variables are continuous. Linearity was assessed by looking at the scatterplot created in 1b and was met. Normality was assessed using Q-Q plots; both variables appear normally distributed as the data aligns closely with the red reference line. Finally, no significant outliers were detected from the scatterplot. Therefore, all assumptions for Pearson's correlation were met.
+**Summary of assumption checks**: The data includes independent observations, and both variables are continuous. Linearity was assessed by looking at the scatterplot created in Problem 1b and was met because data points appear to follow a straight line. Normality was assessed using two Q-Q plots; both variables appear normally distributed as the data for each variable aligns closely with their red reference line. Finally, no significant outliers were detected after visual assessment from the scatterplot. Therefore, all assumptions for Pearson's correlation were met.
 
 ### Running the test
 
@@ -121,7 +115,7 @@ cor.test(kelp$temp_c, kelp$kelp_elong,
 To evaluate the strength of the relationship between temperature and giant kelp frond elongation rate, I used a Pearson's correlation test. I found a strong negative linear relationship between ocean temperature (ºC) and giant kelp elongation rate (cm/day) (Pearson’s r = -0.69, t(30) = -5.19, p < 0.001, ⍺ = 0.05). Therefore, the null hypothesis should be rejected because there is a strong relationship between ocean water temperature and giant kelp frond elongation rate. 
 
 ## e. Test implications
-The results outlined above indicate that giant kelp frond growth rate decreases with increased ocean water temperatures. Therefore, warming ocean temperatures from climate change could threaten giant kelp productivity and species that rely on healtyh giant kelp ecosystems. 
+The results outlined above indicate that giant kelp frond growth rate decreases with increased ocean water temperatures. Therefore, warming ocean temperatures from climate change could threaten giant kelp productivity and species that rely on healthy giant kelp ecosystems. 
 
 ## f. Double check your work 
 ```{r}
@@ -186,7 +180,7 @@ ggplot(data = my_data,
 
 **Figure 2**:
 ```{r}
-#| label: my-data-continuous-visualization
+#| label: my-data-sleep-visualization
 # boxplot with jitter: workout type vs sleep the previous night (hours)
 
 # base layer: ggplot with x- and y- axes
@@ -222,15 +216,15 @@ ggplot(data = my_data,
 
 ## b. Captions
 
-**Figure 1. Runs show the most variable workout duration.** Points represent individual workout sessions (n = 30, most recent observation: 2026-05-26). Colors represent workout type (green: lift, blue: run, yellow: surf, red: yoga). Boxes show the median and interquartile range of workout duration (minutes) for each workout type (lift, run, surf, yoga). Note that surf sessions (n = 2) are limited in sample size.
+**Figure 1. Runs show the most variable workout duration.** Points represent individual workout sessions (n = 30, most recent observation: 2026-05-26). Colors represent workout type (green: lift, blue: run, orange: surf, red: yoga). Boxes show the median and interquartile range of workout duration (minutes) for each workout type (lift, run, surf, yoga). Note that surf sessions (n = 2) are limited in sample size.
 
-**Figure 2. More sleep is associated with going on runs.** Points represent individual workout sessions (n = 30, most recent observation: 2026-05-26). Colors represent workout type (green: lift, blue: run, yellow: surf, red: yoga). Boxes show the median and interquartile range of sleep the previous night (hours) for each workout type (lift, run, surf, yoga). Note that surf sessions (n = 2) are limited in sample size.
+**Figure 2. More sleep is associated with going on runs.** Points represent individual workout sessions (n = 30, most recent observation: 2026-05-26). Colors represent workout type (green: lift, blue: run, orange: surf, red: yoga). Boxes show the median and interquartile range of sleep the previous night (hours) for each workout type (lift, run, surf, yoga). Note that surf sessions (n = 2) are limited in sample size.
 
 
 # Problem 3. Affective visualization
 
 ## a. Describe your affective visualization
-In analyzing my personal data, I found that the duration of my workouts varies more for runs than for lifting, surfing, and yoga. I also found that the more I sleep the night prior, the more likely I am to go on a run compared to doing a lift, surf, or yoga workout. With these observations in mind, I'm planning to make an affective visualization focused on the relationship between a longer duration of sleep and an increased number of runs. My current plan is to create a drawing where I'm dreaming of running (see the sketch below)!  
+In analyzing my personal data, I found that run duration is more variable than lifting, surfing, and yoga, and that I tend to sleep more on nights before runs than before other workout types. With these observations in mind, I plan to create an affective visualization exploring the relationship between sleep duration and workout type. My visualization will be a hand drawn landscape where hills of varying heights represent hours of sleep the previous night. Each section of the landscape will be colored and labeled by workout type, and stick figures doing that workout will be placed on top. 
 
 ## b. Create a paper sketch of your idea
 **Note**: This sketch was hand drawn on my iPad (I don't have paper...)
@@ -250,9 +244,14 @@ knitr::include_graphics(here("images", "sketch.idea.jpeg"))
 knitr::include_graphics(here("images", "draft.jpg"))
 ```
 
-
 ## d. Write an artist statement
+**Content**: This piece visualizes the relationship between sleep duration and workout type from my personal workout data. Each colored landscape section represents a workout type (lift, run, surf, yoga), with the height of the rolling hills representing hours of sleep the previous night; taller peaks indicate more sleep. Stick figures placed on the hills are in the position of their workout type and are situated at the height corresponding to their sleep value.
 
+**Influences**: Jill Pelto's paintings, which overlay data directly into natural landscapes, were a primary influence on this piece. The layered contour lines were generally inspired by topographic maps, which I hope add depth and a sense of flow to my visualization. 
+
+**Form**: This piece is hand drawn using Notability on my iPad. I am still determining if my final visualization will be created online with my iPad or on paper with watercolors. If I decide to do watercolors on paper, I will use Jill Pelto's paintings as reference because I love her style. 
+
+**Process**: The first step was sketching the horizontal landscape divided into sections by workout type. Then, I adjusted the hill heights to more accurately reflect the sleep distributions I observed in my data (see Figure 2 in Problem 2a). Stick figures were added on top of each hill to represent workout sessions; although I still have to decide if I want the number of figures to accurately reflect the exact number of observations. Contour lines were drawn between the hills to reinforce the differences in sleep duration (hill height). 
 
 ## e. Prep your materials to share in class
 [View](https://docs.google.com/presentation/d/1Hp80ZdV6cwIbl-D7HRz6ZWOA7Yjt5NrxB7XCIwtxzso/edit?usp=sharing) my slides. 
@@ -272,10 +271,10 @@ knitr::include_graphics(here("images", "anova.test.2.png"))
 ```
 
 ## b. Visual clarity
-Table 1 presents the ANOVA results organized by species and divided into response variable columns for growth, reproduction, disease, and mortality. Although Table 1 allows for clear comparison of how each predictor affects each outcome across species, it includes so many information that it had to be extended into two tables. Furthermore, the table only reports MS, F, and p-values with no indication of the direction or magnitude of effects, so viewers cannot assess whether warm temperature increased or decreased growth.
+Table 1 presents the ANOVA results organized by species and divided into response variable columns for growth, reproduction, disease, and mortality. Although Table 1 allows for clear comparison of how each predictor affects each outcome across species, it includes so much information that it was extended into two tables in the article. Furthermore, the table only reports MS, F, and p-values with no indication of the direction or magnitude of effects, so viewers cannot assess whether warm temperature increased or decreased growth.
 
 ## c. Aesthetic clarity
-Table 1 table has a high data to ink ratio because the authors present dense statistical information in a compact grid without colors or borders. Nonetheless, I find the table difficult to follow due to the large amount of information it presents. Furthermore, significant p-values are not visually distinguished with asterisks or text modifications, making it harder for viewers to see important results.
+Table 1 has a high data to ink ratio because the authors present dense statistical information in a compact grid without colors or borders. Nonetheless, I find the table difficult to follow due to the large amount of information it presents. Furthermore, significant p-values are not visually distinguished with asterisks or text modifications, making it harder for viewers to see important results.
 
 ## d. Recommendations
 **Recommended modifications**:
