@@ -233,11 +233,12 @@ ggplot(data = my_data,
 In analyzing my personal data, I found that the duration of my workouts varies more for runs than for lifting, surfing, and yoga. I also found that the more I sleep the night prior, the more likely I am to go on a run compared to doing a lift, surf, or yoga workout. With these observations in mind, I'm planning to make an affective visualization focused on the relationship between a longer duration of sleep and an increased number of runs. My current plan is to create a drawing where I'm dreaming of running (see the sketch below)!  
 
 ## b. Create a paper sketch of your idea
+**Note**: This sketch was hand drawn on my iPad (I don't have paper...)
 ```{r}
 #| label: insert-sketch-photo
 #| echo: false
 
-# knitr::include_graphics(here("images", "sketch.idea.png"))
+knitr::include_graphics(here("images", "sketch.idea.jpeg"))
 ```
 
 ## c. Make a draft of your visualization
