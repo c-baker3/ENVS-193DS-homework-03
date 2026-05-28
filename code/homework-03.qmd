@@ -169,6 +169,7 @@ ggplot(data = my_data,
   # changed colors from default
   scale_color_manual(values = c("Lift" = "darkgreen",
                                 "Run"  = "navyblue",
+                                "Surf" = "darkorange",
                                 "Yoga" = "darkred")) +
   # relabeled x- and y-axes
   # added title summarizing takeaway
@@ -221,9 +222,9 @@ ggplot(data = my_data,
 
 ## b. Captions
 
-**Figure 1. Runs show the most variable workout duration.** Points represent individual workout sessions (n = 30, most recent observation: 2026-05-26). Color represents each workout type (green: lift, blue: run, grey: surf, red: yoga). Boxes show the median and interquartile range of workout duration (minutes) for each workout type (lift, run, surf, yoga). Note that surf sessions (n = 2) are limited in sample size.
+**Figure 1. Runs show the most variable workout duration.** Points represent individual workout sessions (n = 30, most recent observation: 2026-05-26). Colors represent workout type (green: lift, blue: run, yellow: surf, red: yoga). Boxes show the median and interquartile range of workout duration (minutes) for each workout type (lift, run, surf, yoga). Note that surf sessions (n = 2) are limited in sample size.
 
-**Figure 2. More sleep is associated with going on runs.** Points represent individual workout sessions (n = 30, most recent observation: 2026-05-26). Color represents each workout type (green: lift, blue: run, grey: surf, red: yoga). Boxes show the median and interquartile range of sleep the previous night (hours) for each workout type (lift, run, surf, yoga). Note that surf sessions (n = 2) are limited in sample size.
+**Figure 2. More sleep is associated with going on runs.** Points represent individual workout sessions (n = 30, most recent observation: 2026-05-26). Colors represent workout type (green: lift, blue: run, yellow: surf, red: yoga). Boxes show the median and interquartile range of sleep the previous night (hours) for each workout type (lift, run, surf, yoga). Note that surf sessions (n = 2) are limited in sample size.
 
 
 # Problem 3. Affective visualization
